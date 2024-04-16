@@ -1,6 +1,17 @@
+#installations
+
+!pip install langchain
+!pip install streamlit
+!pip install streamlit_chat
+!pip install -q -U torch==2.2.1 datasets transformers tensorflow==2.15 langchain playwright html2text sentence_transformers faiss-cpu
+!pip install -q accelerate==0.21.0 peft==0.4.0 bitsandbytes==0.43.1 trl==0.4.7 typing-extensions==4.6.1 pyarrow==14.0.2  
+!pip install -i https://pypi.org/simple/ bitsandbytes
+!pip install accelerate
+
+
 #import dependencies
 import os
-# import torch
+import torch
 
 from transformers import (AutoTokenizer,
                           AutoModelForCausalLM,
