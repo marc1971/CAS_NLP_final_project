@@ -1,47 +1,7 @@
-#installations
-
-!pip install langchain
-!pip install streamlit
-!pip install streamlit_chat
-!pip install -q -U torch==2.2.1 datasets transformers tensorflow==2.15 langchain playwright html2text sentence_transformers faiss-cpu
-!pip install -q accelerate==0.21.0 peft==0.4.0 bitsandbytes==0.43.1 trl==0.4.7 typing-extensions==4.6.1 pyarrow==14.0.2  
-!pip install -i https://pypi.org/simple/ bitsandbytes
-!pip install accelerate
-
-
-#import dependencies
-import os
-import torch
-
-from transformers import (AutoTokenizer,
-                          AutoModelForCausalLM,
-                          BitsAndBytesConfig,
-                          pipeline
-                          )
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-from transformers import BitsAndBytesConfig
-from langchain_community.llms import HuggingFacePipeline
-from langchain.chains import LLMChain, StuffDocumentsChain
-from langchain_core.runnables import RunnableLambda, RunnablePassthrough
-from langchain.prompts.prompt import PromptTemplate
-
-import time
-
-import streamlit as st
-from streamlit_chat import message
-from streamlit.components.v1.components import MarshallComponentException
-
-from PIL import Image
-
-
-
 
 ###################
 #Set up Quantization of Model
 ###################
-
-print("\nIs Cuda available?", torch.cuda.is_available())
 
 # Activate 4-bit precision base model loading
 use_4bit = True
