@@ -1,6 +1,6 @@
 #import dependencies
 import os
-import torch
+# import torch
 
 from transformers import (AutoTokenizer,
                           AutoModelForCausalLM,
